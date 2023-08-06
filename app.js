@@ -10,7 +10,7 @@ const appError = require("./util/appError");
 const errorHandler = require("./controller/errorContorller");
 const hpp = require("hpp");
 
-const tourRouter = require("./routes/tourRoutes");
+const medRouter = require("./routes/medRoutes");
 const userRouter = require("./routes/userRoutes");
 // add middleware for reading the data into request body
 //Middleware
@@ -54,7 +54,7 @@ app.use(xss());
 
 // this is use to serve static file
 // app.use(express.static())
-app.use("/api/v1/tours", tourRouter);
+app.use("/api/v1/medi", medRouter);
 app.use("/api/v1/user", userRouter);
 app.all("*", (req, res, next) => {
   const newError = new appError(
